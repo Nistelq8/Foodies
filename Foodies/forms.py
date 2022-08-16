@@ -1,5 +1,8 @@
+from dataclasses import fields
+from pyexpat import model
 from django import forms
 from django.contrib.auth import get_user_model
+from Foodies import models
 
 User = get_user_model()
 
@@ -16,3 +19,21 @@ class UserRegister(forms.ModelForm):
 class UserLogin(forms.Form):
     username = forms.CharField(required=True)
     password = forms.CharField(required=True, widget=forms.PasswordInput())
+    
+    
+    
+# class Create_Recipe(forms.ModelForm):
+#     class Meta:
+#         model = models.Recipe
+#         fields = ["title","description","image","ingredient"]
+        
+        
+# class Create_Ingredient(forms.ModelForm):
+#     class Meta:
+#         model = models.Ingredients
+#         fields = ["title","image","category"]
+        
+# class Create_Category(forms.ModelForm):
+#     class Meta:
+#         model = models.Category
+#         fields = ["title","image"]

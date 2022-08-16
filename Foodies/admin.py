@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from Foodies import models
+
+to_register = [models.Category, models.Ingredients, models.Recipe]
+
+admin.site.register(to_register)

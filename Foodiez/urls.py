@@ -19,5 +19,5 @@ from Foodies import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.user_register)
+    path('register/', views.user_register, name="register")
 ]
