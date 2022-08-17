@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import  UserRegister, UserLogin
+from .forms import  UserRegister, UserLogin, Create_Recipe
 from django.contrib.auth import login, authenticate, logout
 
 
@@ -37,7 +37,7 @@ def user_login(request):
             if auth_user is not None:
                 login(request, auth_user)
                 # Where you want to go after a successful login
-                return redirect("successful-login")
+                return redirect("homepage")
 
     context = {
         "form": form,
@@ -50,12 +50,12 @@ def logout_view(request):
     return redirect("success-page")
 
 
-# def create_recipy_view(request):
-#     form = Create_Recipe
-#     context = {
-#         "form": form,
-#     }
-#     return render(request, '', context)
+def create_recipy_view(request):
+    form = Create_Recipe
+    context = {
+        "form": form,
+    }
+    return render(request, 'homepage.html', context)
 
 # def create_category_view(request):
 #     form = Create_Category

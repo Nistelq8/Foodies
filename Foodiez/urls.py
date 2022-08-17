@@ -16,8 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Foodies import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', views.user_register, name="register")
+    path('register/', views.user_register, name="register"),
+    path('login/', views.user_login, name='login'),
+    path('homepage/', views.create_recipy_view ,name='homepage'),
+    path('recipes/', views.create_recipy_view, name='recipes'),
+    path('categories/', views.create_recipy_view, name='categories'),
+    path('ingredients/', views.create_recipy_view, name='ingredients')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -22,10 +22,10 @@ class UserLogin(forms.Form):
     
     
     
-# class Create_Recipe(forms.ModelForm):
-#     class Meta:
-#         model = models.Recipe
-#         fields = ["title","description","image","ingredient"]
+class Create_Recipe(forms.ModelForm):
+    class Meta:
+        model = models.Recipe
+        fields = ["title","description","image",]
         
         
 # class Create_Ingredient(forms.ModelForm):
