@@ -13,11 +13,13 @@
 </head>
 <body>
     <ul class="menu cf">
+        <li><a href="{% url 'homepage' %}">Homepage</a></li>
         <li><a href="{% url 'recipes' %}">Recipes</a></li>
         <li><a href="{% url 'categories' %}">Categories</a>
         <li><a href="{% url 'ingredients' %}">Ingredients</a></li>
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
         </ul>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

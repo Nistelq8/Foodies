@@ -2,17 +2,20 @@
 {% load static %}
 
 {% block title %}
-  Categories
+  Ingredients
 {% endblock title %}
 
 {% block content %} 
-    {% for category in categories %}
+    {% for ingredient in ingredients %}
     <ul>
         <li>
-          <h1>{{ category.title }}</h1>
+          <h1>{{ ingredient.title }}</h1>
         </li>
         <li>
-          <p>{{ category.image }}</p>
+          <p>{{ ingredient.image }}</p>
+        </li>
+        <li>
+          <p>{{ ingredient.cat }}</p>
         </li>
       </ul>
       <br />

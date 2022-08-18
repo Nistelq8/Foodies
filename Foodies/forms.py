@@ -1,5 +1,4 @@
 from dataclasses import fields
-from pyexpat import model
 from django import forms
 from django.contrib.auth import get_user_model
 from Foodies import models
@@ -26,6 +25,8 @@ class Create_Recipe(forms.ModelForm):
     class Meta:
         model = models.Recipe
         fields = ["title","description","image",]
+        
+        # widgets = {'Ingredients' : forms.CheckboxSelectMultiple()}
         
         
 # class Create_Ingredient(forms.ModelForm):

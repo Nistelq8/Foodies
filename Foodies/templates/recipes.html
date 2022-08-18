@@ -1,12 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>recipes</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Recipes
+{% endblock title %}
+
+{% block content %} 
+    {% for recipe in recipes %}
+    <ul>
+        <li>
+          <h1>{{ recipe.title }}</h1>
+        </li>
+        <li>
+          <p>{{ recipe.description }}</p>
+        </li>
+        {% if recipe.image %}
+
+        <li>
+          <img src="{{ recipe.image.url }}"></img>
+        </li>
+        {% else %}
+        <p></p>
+        {% endif %}
+        {% for c in recipe.cat.all %}
+        <li>
+          <p>{{ c.title }}</p>
+        </li>
+        {% endfor %}
+        <li>
+          <p>{{ recipe.ingredient }}</p>
+        </li>
+      </ul>
+      <br />
+      {% endfor %}
     
-</body>
-</html>
+
+
+{% endblock content %} 
+
+

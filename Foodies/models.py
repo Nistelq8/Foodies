@@ -18,7 +18,7 @@ class Ingredients(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='media/')
+    image = models.ImageField(upload_to='media/', blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     Ingredient = models.ManyToManyField(Ingredients)
     cat = models.ManyToManyField(Category)

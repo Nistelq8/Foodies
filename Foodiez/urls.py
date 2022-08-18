@@ -23,10 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.user_register, name="register"),
     path('login/', views.user_login, name='login'),
+    path('logout/', views.logout_view, name='logout'),
     path('homepage/', views.create_recipy_view ,name='homepage'),
-    path('recipes/', views.create_recipy_view, name='recipes'),
-    path('categories/', views.create_recipy_view, name='categories'),
-    path('ingredients/', views.create_recipy_view, name='ingredients')
+    path('recipes/', views.recipe_list_view, name='recipes'),
+    path('categories/', views.categories_list_view, name='categories'),
+    path('ingredients/', views.ingredients_list_view, name='ingredients'),
 ]
 
 if settings.DEBUG:
