@@ -12,8 +12,16 @@
           <h1>{{ category.title }}</h1>
         </li>
         <li>
-          <p>{{ category.image }}</p>
+          <!-- <p>{{ category.image }}</p> -->
         </li>
+        {% if category.image %}
+
+        <li>
+          <img src="{{ category.image.url }}"></img>
+        </li>
+        {% else %}
+        <p></p>
+        {% endif %}
       </ul>
       <br />
       {% endfor %}

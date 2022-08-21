@@ -68,8 +68,6 @@ def create_recipy_view(request):
 
 def recipe_list_view(request):
     recipes = Recipe.objects.all()
-    test = (Recipe.objects.get(id=1))
-    print(test.cat.all())
     context = {
         "recipes": recipes
     }

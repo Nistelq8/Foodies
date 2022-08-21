@@ -11,9 +11,14 @@
         <li>
           <h1>{{ ingredient.title }}</h1>
         </li>
+        {% if ingredient.image %}
+
         <li>
-          <p>{{ ingredient.image }}</p>
+          <img src="{{ ingredient.image.url }}"></img>
         </li>
+        {% else %}
+        <p></p>
+        {% endif %}
         <li>
           <p>{{ ingredient.cat }}</p>
         </li>
